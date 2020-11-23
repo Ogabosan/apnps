@@ -11,6 +11,11 @@ app.get('/mensagensinha', function(req,res){
      res.send("Esta mensagem aqui é automatica")
 })
 
+app.get('/sobre', function(req,res){
+     res.send("Esta pagina está sendo desenvolvida pelo Gabriel")
+})
+
+
 app.listen(3000, function(){
 
      console.log("conexão inicializada na porta 3000")
