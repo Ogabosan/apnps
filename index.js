@@ -7,7 +7,9 @@ app.get('/', function(req,res){
 
 
 })
-
+app.get('/mensagem', function(req,res){
+     res.send("Esta mensagem aqui é automatica")
+})
 
 app.listen(3000, function(){
 
