@@ -1,28 +1,25 @@
 const express = require('express')
 const app = express()
+var bodyParser = require('body-parser')
+var cookieParser = require('cookie-parser')
+var path = require('path')
+const { urlencoded } = require('body-parser')
+
+app.use(cookieParser())
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
+
+app.set("view engine", "ejs")
+
+app.use(express.static(path.join(__dirname, "public")))
 
 app.get('/', function(req,res){
 
      res.send("Olá, Nobre Gabriel Mathias")
-
-
-})
-app.get('/mensagensinha', function(req,res){
-     res.send("Esta mensagem aqui é automatica")
-})
-
-app.get('/sobre', function(req,res){
-     res.send("Esta pagina está sendo desenvolvida pelo Gabriel")
-})
-
-
-app.get('/layout', function(req,res){
-     res.send("Este é o novo layout")
 })
 
 app.listen(3000, function(){
 
      console.log("conexão inicializada na porta 3000")
-
-
 })
