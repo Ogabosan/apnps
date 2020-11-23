@@ -16,6 +16,10 @@ app.get('/sobre', function(req,res){
 })
 
 
+app.get('/layout', function(req,res){
+     res.send("Este é o novo layout")
+})
+
 app.listen(3000, function(){
 
      console.log("conexão inicializada na porta 3000")
