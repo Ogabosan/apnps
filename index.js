@@ -4,6 +4,7 @@ var bodyParser = require('body-parser')
 var cookieParser = require('cookie-parser')
 var path = require('path')
 const { urlencoded } = require('body-parser')
+const { getMaxListeners } = require('process')
 
 app.use(cookieParser())
 
@@ -16,7 +17,19 @@ app.use(express.static(path.join(__dirname, "public")))
 
 app.get('/', function(req,res){
 
-     res.send("Olá, Nobre Gabriel Mathias")
+     res.render('index.ejs', {})
+})
+
+app.get('/usuarios', function(req,res){
+
+     res.render('usuarios.ejs', {usuarios: [
+          {nome:'Gabreil', email: 'Ogabosan@gmail.com'},
+          {nome:'Vitoria', email: 'vitoria@gmail.com'},
+          {nome:'micael', email: 'micael@gmail.com'},
+          {nome:'Julia', email: 'julia@gmail.com'},
+          {nome:'Junior', email: 'junior@gmail.com'},
+          {nome:'Mariana', email: 'mariana@gmail.com'}
+     ]})
 })
 
 app.listen(3000, function(){
