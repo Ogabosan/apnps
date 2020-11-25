@@ -32,6 +32,16 @@ app.get('/usuarios', function(req,res){
      ]})
 })
 
+app.get('/add', function(req,res){
+     res.render('adiciona.ejs')
+})
+
+app.post('/add', function(req,res){
+       console.log("Nome: " + req.body.txtNome + "\n" + "Email: " + req.body.txtEmail)
+})
+
+
+
 app.listen(3000, function(){
 
      console.log("conexão inicializada na porta 3000")
