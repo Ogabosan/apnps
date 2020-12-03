@@ -17,8 +17,10 @@ app.set("view engine", "ejs")
 app.use(express.static(path.join(__dirname, "public")))
 
 app.get('/', function(req,res){
-
-     res.render('index.ejs', {})
+      Usuario.find({}).exec(function(err,docs){
+          res.render('index.ejs', {Usuarios:docs})
+      })
+     
 })
 
 
@@ -42,6 +44,7 @@ app.post('/add', function(req,res){
        })
 })
 
+app.get()
 
 
 app.listen(3000, function(){
